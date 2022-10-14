@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      //promise
+
+
+        let a='bike';
+      let b='car';
+
+      let p=new Promise(function(resolve,reject){
+        if(a.length>b.length){
+            resolve("bike");
+        }else{
+            reject("car");
+        }
+      })
+      p.then(function(answer){
+        console.log('B '+answer);
+      }).catch(function(ans){
+        console.log('C '+ans);
+      })
+
+      // promise.all 
+
+
+      const name1=new promise((resolve,reject)=>{
+                resolve(10);
+            });
+            const name2=new promise((resolve,reject)=>{
+                resolve(20);
+            });
+            const name3=new promise((resolve,reject)=>{
+                resolve(30);
+            });
+            
+            promise.all([name1,name2,name3]).then((value)=>{
+                const total=value.reduce((a,b)=>{
+                    return a+b;
+                });
+                console.log(total);
+            }).catch((value)=>{
+                return console.log(`some of promise is rejected =${value}`);
+            });
+
+
+    </script>
+</body>
+</html>
